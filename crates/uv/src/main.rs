@@ -105,6 +105,9 @@ async fn run() -> Result<ExitStatus> {
         }
     };
 
+    // Load the workspace settings.
+    let _ = uv_workspace::Workspace::find(env::current_dir()?)?;
+
     // Configure the `tracing` crate, which controls internal logging.
     #[cfg(feature = "tracing-durations-export")]
     let (duration_layer, _duration_guard) = logging::setup_duration()?;

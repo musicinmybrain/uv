@@ -11,6 +11,7 @@ use crate::store::{BasicAuthData, Credential};
 /// See <https://pip.pypa.io/en/stable/topics/authentication/#keyring-support>
 #[derive(Debug, Default, Clone, Copy, PartialEq, Eq)]
 #[cfg_attr(feature = "clap", derive(clap::ValueEnum))]
+#[cfg_attr(feature = "serde", derive(serde::Deserialize))]
 pub enum KeyringProvider {
     /// Will not use keyring for authentication
     #[default]
