@@ -19,7 +19,7 @@ platform's persistent credential store.) The password or secret can then be read
 can then be removed using the `delete_credential` method.
 
 ```rust
-use keyring::{Entry, Result};
+use uv_keyring::{Entry, Result};
 
 fn main() -> Result<()> {
     let entry = Entry::new("my-service", "my-name")?;
@@ -33,7 +33,7 @@ fn main() -> Result<()> {
 
 ## Errors
 
-Creating and operating on entries can yield a `keyring::Error` which provides both a
+Creating and operating on entries can yield a `uv_keyring::Error` which provides both a
 platform-independent code that classifies the error and, where relevant, underlying platform errors
 or more information about what went wrong.
 
